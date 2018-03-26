@@ -13,6 +13,8 @@ module OmniAuth
         token_url: '/oauth2/v2.1/token'
       }
 
+      option :authorize_options, [:scope, :bot_prompt]
+
       def authorize_params
         super.tap do |params|
           %w[bot_prompt].each do |v|
